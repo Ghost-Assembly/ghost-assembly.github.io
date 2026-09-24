@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ghost Assembly</title>
+        <meta
+            name="description"
+            content="Ghost Assembly builds open-source GNOME Shell extensions and command-line tools: QuickRem, QuickTiler, QuickTS and awsdiag."
+        />
+        <meta name="color-scheme" content="dark light" />
+        <meta name="theme-color" content="#03030a" />
+        <link rel="icon" type="image/png" href="assets/favicon.png" />
+        <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+        <link
+            rel="preload"
+            href="assets/fonts/orbitron-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link rel="stylesheet" href="style.css" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Ghost Assembly" />
+        <meta property="og:title" content="Ghost Assembly" />
+        <meta
+            property="og:description"
+            content="Small, sharp tools for the Linux desktop and the cloud."
+        />
+        <meta property="og:url" content="https://ghost-assembly.github.io/" />
+        <meta
+            property="og:image"
+            content="https://ghost-assembly.github.io/assets/og-image.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="The Ghost Assembly logo" />
+        <meta name="twitter:card" content="summary_large_image" />
+    </head>
+    <body>
+        <a class="skip" href="#main">Skip to content</a>
+
+        <div class="night">
+            <header class="bar">
+                <a class="home" href="#top" aria-label="Ghost Assembly, back to top">
+                    <img src="assets/emblem.webp" alt="" width="36" height="36" />
+                </a>
+                <nav aria-label="Site">
+                    <ul>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="https://github.com/Ghost-Assembly">GitHub</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="hero" id="top" aria-labelledby="title">
+                <h1 id="title">
+                    <img
+                        src="assets/logo.webp"
+                        alt="Ghost Assembly"
+                        width="720"
+                        height="712"
+                    />
+                </h1>
+                <p class="tagline">
+                    Small, sharp tools for the Linux desktop and the cloud.
+                </p>
+                <p class="lede">
+                    Open-source GNOME Shell extensions and command-line tools. Each one
+                    does a single job and stays out of your way.
+                </p>
+                <p class="actions">
+                    <a class="button primary" href="#projects">Browse projects</a>
+                    <a class="button" href="https://github.com/Ghost-Assembly"
+                        >GitHub</a
+                    >
+                </p>
+            </section>
+        </div>
+
+        <main id="main">
+            <section id="projects" aria-labelledby="projects-title">
+                <h2 id="projects-title">Projects</h2>
+
+                <section class="group" aria-labelledby="gnome-title">
+                    <h3 id="gnome-title">GNOME Shell extensions</h3>
+                    <p class="group-intro">
+                        Quick Settings tiles and keyboard tiling for GNOME Shell.
+                    </p>
+                    <div class="list">
+                        <article class="project">
+                            <h4>QuickRem</h4>
+                            <p class="meta">GNOME 49–50</p>
+                            <p>
+                                Your saved Remmina connections in the Quick Settings
+                                panel. The list follows Remmina’s profile folder as it
+                                changes, so a new connection appears without a reload.
+                            </p>
+                            <p class="links">
+                                <a href="https://ghost-assembly.github.io/quickrem/"
+                                    >Docs<span class="vh"> for QuickRem</span></a
+                                >
+                                <a href="https://github.com/Ghost-Assembly/quickrem"
+                                    >Source<span class="vh"> for QuickRem</span></a
+                                >
+                            </p>
+                        </article>
+
+                        <article class="project">
+                            <h4>QuickTiler</h4>
+                            <p class="meta">GNOME 49–50</p>
+                            <p>
+                                Keyboard-driven zone tiling. Press a direction again to
+                                cycle the window through quarter and half zones, with no
+                                overlay and no background work.
+                            </p>
+                            <p class="links">
+                                <a href="https://ghost-assembly.github.io/quicktiler/"
+                                    >Docs<span class="vh"> for QuickTiler</span></a
+                                >
+                                <a href="https://github.com/Ghost-Assembly/quicktiler"
+                                    >Source<span class="vh"> for QuickTiler</span></a
+                                >
+                            </p>
+                        </article>
+
+                        <article class="project">
+                            <h4>QuickTS</h4>
+                            <p class="meta">GNOME 50</p>
+                            <p>
+                                Tailscale in Quick Settings. Toggle the tailnet, pick an
+                                exit node, switch profiles and send files over Taildrop
+                                without leaving the panel.
+                            </p>
+                            <p class="links">
+                                <a href="https://ghost-assembly.github.io/quickts/"
+                                    >Docs<span class="vh"> for QuickTS</span></a
+                                >
+                                <a href="https://github.com/Ghost-Assembly/quickts"
+                                    >Source<span class="vh"> for QuickTS</span></a
+                                >
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="group" aria-labelledby="cli-title">
+                    <h3 id="cli-title">Command-line tools</h3>
+                    <p class="group-intro">
+                        Fast tools for the terminal and for agents.
+                    </p>
+                    <div class="list">
+                        <article class="project">
+                            <h4>awsdiag</h4>
+                            <p class="meta">Rust</p>
+                            <p>
+                                Fast, compact AWS diagnostic data collection. Built to
+                                be driven by an AI agent during troubleshooting, and
+                                just as usable by hand.
+                            </p>
+                            <p class="links">
+                                <a href="https://github.com/Ghost-Assembly/awsdiag"
+                                    >Source<span class="vh"> for awsdiag</span></a
+                                >
+                            </p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/Ghost-Assembly">Ghost Assembly on GitHub</a>
+            </p>
+            <p>Each project is licensed separately; see its repository.</p>
+            <p>© 2026 Ghost Assembly</p>
+        </footer>
+    </body>
+</html>
