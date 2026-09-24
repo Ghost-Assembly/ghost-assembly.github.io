@@ -2,7 +2,7 @@
 
 [![ci](https://github.com/Ghost-Assembly/ghost-assembly.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/Ghost-Assembly/ghost-assembly.github.io/actions/workflows/ci.yml)
 
-The Ghost Assembly organisation site: **<https://ghost-assembly.github.io/>**.
+The Ghost Assembly organization site: **<https://ghost-assembly.github.io/>**.
 
 One hand-written page listing the org's projects, with links to each one's docs and
 source. No framework, no build step and no JavaScript on the page — `docs/` is what
@@ -34,7 +34,7 @@ links. A project with no docs site gets a Source link only.
 Everything in `docs/assets/` except the font is derived from
 `assets/logo-source.png`. After changing the source, run `just assets` to
 regenerate them. The same recipe writes `assets/avatar.png` (512×512 emblem on
-black), the GitHub organisation avatar — it is not published with the site.
+black), the GitHub organization avatar — it is not published with the site.
 
 The heading font is [Orbitron](https://github.com/theleagueof/orbitron), self-hosted
 under the SIL Open Font License (`docs/assets/fonts/OFL.txt`).

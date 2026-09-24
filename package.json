@@ -1,7 +1,7 @@
 {
     "name": "ghost-assembly.github.io",
     "private": true,
-    "description": "The Ghost Assembly organisation site.",
+    "description": "The Ghost Assembly organization site.",
     "license": "MIT",
     "type": "module",
     "engines": {

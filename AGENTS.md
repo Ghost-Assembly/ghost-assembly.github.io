@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Guidance for coding agents working on the Ghost Assembly organisation site,
+Guidance for coding agents working on the Ghost Assembly organization site,
 <https://ghost-assembly.github.io/>. Read `README.md` for the human overview; this file
 holds the rules that are not obvious from the code.
 
@@ -23,7 +23,7 @@ These are deliberate and the test suite enforces most of them.
 - No JavaScript on the page. Theme follows `prefers-color-scheme`; navigation is anchors.
 - No third-party requests from the page. Fonts and images are self-hosted in
   `docs/assets/`. A test fails on any request to another origin.
-- WCAG 2.2 AA. axe runs in both colour schemes with the `wcag2a`, `wcag2aa`,
+- WCAG 2.2 AA. axe runs in both color schemes with the `wcag2a`, `wcag2aa`,
   `wcag21aa`, `wcag22aa` and `best-practice` tags, and must report zero violations.
 - No horizontal scroll at 360px wide.
 - Motion only inside `@media (prefers-reduced-motion: no-preference)`. The hero halo is
@@ -32,7 +32,7 @@ These are deliberate and the test suite enforces most of them.
 
 ## Design rules
 
-- Colour tokens live on `:root` in `docs/style.css`, with a light override under
+- Color tokens live on `:root` in `docs/style.css`, with a light override under
   `prefers-color-scheme: light`. Brand stops are sampled from the logo: cyan `#00a8fc`,
   blue `#2f5afc`, magenta `#d601fc`; paper `#03030a`.
 - `.night` (top bar and hero) re-declares the dark tokens so it stays dark in both

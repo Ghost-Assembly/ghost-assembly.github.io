@@ -1,11 +1,11 @@
 /*
- * Ghost Assembly — organisation site.
+ * Ghost Assembly — organization site.
  *
  * Hand-written, no framework and no build step, like the project docs sites.
  * There is no JavaScript on the page: the theme follows the reader's system
  * setting and navigation is plain anchors.
  *
- * Colours are sampled from the logo. The top band (.night) keeps the dark
+ * Colors are sampled from the logo. The top band (.night) keeps the dark
  * tokens in both schemes, because the logo's silver wordmark and glow only
  * read on black; everything below it follows the reader's scheme.
  */
@@ -185,7 +185,7 @@ a:hover {
     line-height: 0;
 }
 
-/* The halo: the logo's own ring colours, bled out behind it. */
+/* The halo: the logo's own ring colors, bled out behind it. */
 .hero h1::before {
     content: '';
     position: absolute;

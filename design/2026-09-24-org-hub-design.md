@@ -68,7 +68,7 @@ Twitter card tags pointing at `og-image.png`, favicon and apple-touch-icon links
   for OG.
 - `emblem.webp` — circular emblem cropped from the top of the logo (header, ~96px).
 - `favicon.png` (32×32) and `apple-touch-icon.png` (180×180, emblem on black).
-- `og-image.png` — 1200×630, logo centred on the near-black background.
+- `og-image.png` — 1200×630, logo centered on the near-black background.
 - The original PNG kept as `assets/logo-source.png` at the repo root (outside `docs/`,
   so it is not published) so derivatives can be regenerated.
 - `assets/avatar.png` — 512×512 emblem on black, for the GitHub org avatar (not published).
