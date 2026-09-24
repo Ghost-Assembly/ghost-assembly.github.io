@@ -1,0 +1,15 @@
+{
+    "name": "ghost-assembly.github.io",
+    "private": true,
+    "description": "The Ghost Assembly organisation site.",
+    "license": "MIT",
+    "type": "module",
+    "engines": {
+        "node": ">=24"
+    },
+    "devDependencies": {
+        "@axe-core/playwright": "^4.13.0",
+        "@playwright/test": "^1.63.0",
+        "prettier": "^3.9.9"
+    }
+}

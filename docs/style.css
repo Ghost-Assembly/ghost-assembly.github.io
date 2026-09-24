@@ -1,0 +1,357 @@
+/*
+ * Ghost Assembly — organisation site.
+ *
+ * Hand-written, no framework and no build step, like the project docs sites.
+ * There is no JavaScript on the page: the theme follows the reader's system
+ * setting and navigation is plain anchors.
+ *
+ * Colours are sampled from the logo. The top band (.night) keeps the dark
+ * tokens in both schemes, because the logo's silver wordmark and glow only
+ * read on black; everything below it follows the reader's scheme.
+ */
+
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 500 800;
+    font-display: swap;
+    src: url('assets/fonts/orbitron-latin.woff2') format('woff2');
+}
+
+:root {
+    --cyan: #00a8fc;
+    --blue: #2f5afc;
+    --magenta: #d601fc;
+    --spectrum: linear-gradient(135deg, var(--cyan), var(--blue) 55%, var(--magenta));
+    --spectrum-down: linear-gradient(var(--cyan), var(--blue) 50%, var(--magenta));
+
+    --paper: #03030a;
+    --ink: #eceef2;
+    --mist: #9aa3b5;
+    --line: #25263d;
+    --link: var(--cyan);
+
+    --gutter: max(1rem, 4vw);
+    --width: 68rem;
+    --display: 'Orbitron', system-ui, sans-serif;
+    --sans: system-ui, -apple-system, 'Segoe UI', Cantarell, 'Noto Sans', sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --paper: #f3f4f8;
+        --ink: #12131c;
+        --mist: #4a5063;
+        --line: #d4d7e3;
+        --link: #2446d6;
+    }
+}
+
+/* The band carrying the logo is dark whatever the scheme. */
+.night {
+    --paper: #03030a;
+    --ink: #eceef2;
+    --mist: #9aa3b5;
+    --line: #25263d;
+    --link: var(--cyan);
+
+    background: var(--paper);
+    color: var(--ink);
+    color-scheme: dark;
+    /* The halo bleeds past the edges; clip it sideways only, so it can rise behind the bar. */
+    overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--link);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Keyboard users get to skip the header. Visible only when focused. */
+.skip {
+    position: absolute;
+    inset-inline-start: -9999px;
+    inset-block-start: 0;
+    z-index: 10;
+    padding: 0.6rem 1rem;
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.skip:focus {
+    inset-inline-start: 0;
+}
+
+/* Text for screen readers only: "Docs for QuickRem" reads as "Docs". */
+.vh {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ---- Top bar ---------------------------------------------------------- */
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: 1rem var(--gutter);
+}
+
+.home {
+    display: block;
+    line-height: 0;
+    border-radius: 50%;
+}
+
+.bar ul {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bar nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.bar nav a:hover {
+    color: var(--link);
+}
+
+/* ---- Hero ------------------------------------------------------------- */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    padding: 1rem var(--gutter) 4.5rem;
+    text-align: center;
+}
+
+.hero h1 {
+    position: relative;
+    width: min(24rem, 80vw);
+    margin: 0 auto;
+    line-height: 0;
+}
+
+/* The halo: the logo's own ring colours, bled out behind it. */
+.hero h1::before {
+    content: '';
+    position: absolute;
+    inset: -8% -12% 22%;
+    z-index: -1;
+    background:
+        radial-gradient(closest-side at 35% 50%, rgb(0 168 252 / 0.45), transparent),
+        radial-gradient(closest-side at 68% 45%, rgb(214 1 252 / 0.4), transparent);
+    filter: blur(40px);
+    opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero h1::before {
+        animation: breathe 7s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes breathe {
+    from {
+        opacity: 0.45;
+        transform: scale(0.94);
+    }
+    to {
+        opacity: 0.85;
+        transform: scale(1.04);
+    }
+}
+
+.tagline {
+    margin: 2rem auto 0;
+    max-width: 30ch;
+    font-family: var(--display);
+    font-size: clamp(1.25rem, 3.2vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+}
+
+.lede {
+    margin: 1rem auto 0;
+    max-width: 44ch;
+    color: var(--mist);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 2.25rem 0 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.button:hover {
+    border-color: var(--mist);
+}
+
+/* The spectrum lives in the border, not behind the text, so contrast holds. */
+.button.primary {
+    border: 2px solid transparent;
+    background:
+        linear-gradient(var(--paper), var(--paper)) padding-box,
+        var(--spectrum) border-box;
+}
+
+.button.primary:hover {
+    box-shadow:
+        -6px 0 22px -6px rgb(0 168 252 / 0.6),
+        6px 0 22px -6px rgb(214 1 252 / 0.6);
+}
+
+/* ---- Projects --------------------------------------------------------- */
+
+main {
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: 4rem var(--gutter) 3rem;
+}
+
+h2,
+h3,
+h4 {
+    font-family: var(--display);
+    line-height: 1.2;
+}
+
+h2 {
+    margin: 0 0 2.5rem;
+    font-size: clamp(1.9rem, 5vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.group + .group {
+    margin-block-start: 4rem;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.group-intro {
+    margin: 0.35rem 0 1.75rem;
+    color: var(--mist);
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
+    gap: 2.5rem 2.25rem;
+}
+
+.project {
+    padding-inline-start: 1.25rem;
+    border-inline-start: 2px solid;
+    border-image: var(--spectrum-down) 1;
+}
+
+.project h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.project p {
+    margin: 0.75rem 0 0;
+    max-width: 60ch;
+}
+
+.project .meta {
+    margin-block-start: 0.2rem;
+    color: var(--mist);
+    font-size: 0.9rem;
+}
+
+.project .links {
+    display: flex;
+    gap: 1.25rem;
+    font-weight: 600;
+}
+
+/* ---- Footer ----------------------------------------------------------- */
+
+/* Sized to the content column above it, so the rule lines up with the text. */
+footer {
+    width: min(100% - 2 * var(--gutter), var(--width) - 2 * var(--gutter));
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+    border-top: 1px solid var(--line);
+    color: var(--mist);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
