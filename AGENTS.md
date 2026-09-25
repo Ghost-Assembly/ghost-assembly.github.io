@@ -11,9 +11,9 @@ holds the rules that are not obvious from the code.
 - **Everything in `docs/` is public, and nothing outside it is.** Keep tooling, tests,
   the design notes and the source logo out of `docs/`.
 - `docs/.nojekyll` disables Jekyll. Do not remove it.
-- The project docs at `/quickrem/`, `/quicktiler/` and `/quickts/` are published from
-  those projects' own repositories. Never create `docs/quickrem/` (or any other project
-  name) here — it would collide with them.
+- The project docs at `/quickmusic/`, `/quickrem/`, `/quicktiler/` and `/quickts/` are
+  published from those projects' own repositories. Never create `docs/quickrem/` (or any
+  other project name) here — it would collide with them.
 
 ## Hard constraints
 
