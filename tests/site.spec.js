@@ -7,6 +7,7 @@ const pages = 'https://ghost-assembly.github.io';
 // Every project on the page, and the links its card must carry. A project with
 // no docs site has `docs: null`, and its card must not grow a Docs link.
 const projects = [
+    { name: 'QuickClip', slug: 'quickclip', docs: true },
     { name: 'QuickMusic', slug: 'quickmusic', docs: true },
     { name: 'QuickRem', slug: 'quickrem', docs: true },
     { name: 'QuickTiler', slug: 'quicktiler', docs: true },
