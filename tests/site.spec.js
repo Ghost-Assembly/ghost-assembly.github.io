@@ -2,10 +2,10 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 const org = 'https://github.com/Ghost-Assembly';
-const pages = 'https://ghost-assembly.github.io';
+const pages = 'https://ghost-assembly.com';
 
 // Every project on the page, and the links its card must carry. A project with
-// no docs site has `docs: null`, and its card must not grow a Docs link.
+// no docs site has `docs: false`, and its card must not grow a Docs link.
 const projects = [
     { name: 'QuickClip', slug: 'quickclip', docs: true },
     { name: 'QuickMusic', slug: 'quickmusic', docs: true },
@@ -13,6 +13,7 @@ const projects = [
     { name: 'QuickTiler', slug: 'quicktiler', docs: true },
     { name: 'QuickTS', slug: 'quickts', docs: true },
     { name: 'awsdiag', slug: 'awsdiag', docs: false },
+    { name: 'GhostDock', slug: 'ghostdock', docs: false },
 ];
 
 test('loads every asset from its own origin, without errors', async ({
