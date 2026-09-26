@@ -2,14 +2,14 @@
 
 [![ci](https://github.com/Ghost-Assembly/ghost-assembly.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/Ghost-Assembly/ghost-assembly.github.io/actions/workflows/ci.yml)
 
-The Ghost Assembly organization site: **<https://ghost-assembly.github.io/>**.
+The Ghost Assembly organization site: **<https://ghost-assembly.com/>**.
 
 One hand-written page listing the org's projects, with links to each one's docs and
 source. No framework, no build step and no JavaScript on the page — `docs/` is what
 GitHub Pages serves, as-is.
 
 Each project publishes its own docs from its own repository's `docs/` folder, at
-`https://ghost-assembly.github.io/<project>/`. This repository only owns the root.
+`https://ghost-assembly.com/<project>/`. This repository only owns the root.
 
 ## Develop
 
@@ -25,9 +25,14 @@ just ci      # everything CI runs: lint, test, security, build
 
 ## Adding a project
 
-Add an `<article class="project">` to the right group in `docs/index.html`, and add it
-to the `projects` list at the top of `tests/site.spec.js` so the suite checks its
-links. A project with no docs site gets a Source link only.
+A project appears in three places, and all three must change together:
+
+1. An `<article class="project">` in the right group in `docs/index.html`. A project
+   with no docs site gets a Source link only.
+2. An entry in the `projects` list at the top of `tests/site.spec.js`, so the suite
+   checks its links.
+3. The org profile README, `profile/README.md` in the separate
+   [Ghost-Assembly/.github](https://github.com/Ghost-Assembly/.github) repository.
 
 ## Images
 

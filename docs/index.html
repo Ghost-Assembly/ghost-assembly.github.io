@@ -6,7 +6,7 @@
         <title>Ghost Assembly</title>
         <meta
             name="description"
-            content="Ghost Assembly builds open-source GNOME Shell extensions and command-line tools: QuickMusic, QuickRem, QuickTiler, QuickTS and awsdiag."
+            content="Ghost Assembly builds open-source GNOME Shell extensions, command-line tools and self-hosted services: QuickClip, QuickMusic, QuickRem, QuickTiler, QuickTS, awsdiag and GhostDock."
         />
         <meta name="color-scheme" content="dark light" />
         <meta name="theme-color" content="#03030a" />
@@ -28,10 +28,10 @@
             property="og:description"
             content="Small, sharp tools for the Linux desktop and the cloud."
         />
-        <meta property="og:url" content="https://ghost-assembly.github.io/" />
+        <meta property="og:url" content="https://ghost-assembly.com/" />
         <meta
             property="og:image"
-            content="https://ghost-assembly.github.io/assets/og-image.png"
+            content="https://ghost-assembly.com/assets/og-image.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -67,8 +67,9 @@
                     Small, sharp tools for the Linux desktop and the cloud.
                 </p>
                 <p class="lede">
-                    Open-source GNOME Shell extensions and command-line tools. Each one
-                    does a single job and stays out of your way.
+                    Open-source GNOME Shell extensions, command-line tools and
+                    self-hosted services. Each one does a single job and stays out of
+                    your way.
                 </p>
                 <p class="actions">
                     <a class="button primary" href="#projects">Browse projects</a>
@@ -85,20 +86,38 @@
 
                 <section class="group" aria-labelledby="gnome-title">
                     <h3 id="gnome-title">GNOME Shell extensions</h3>
-                    <p class="group-intro">
-                        Quick Settings tiles and keyboard tiling for GNOME Shell.
-                    </p>
+                    <p class="group-intro">Quick Settings tiles for GNOME Shell.</p>
                     <div class="list">
+                        <article class="project">
+                            <h4>QuickClip</h4>
+                            <p class="meta">GNOME 50</p>
+                            <p>
+                                A private clipboard history in Quick Settings, with
+                                developer transforms. Copies are kept in memory only,
+                                and anything a password manager marks as secret is
+                                skipped.
+                            </p>
+                            <p class="links">
+                                <a href="https://ghost-assembly.com/quickclip/"
+                                    >Docs<span class="vh"> for QuickClip</span></a
+                                >
+                                <a href="https://github.com/Ghost-Assembly/quickclip"
+                                    >Source<span class="vh"> for QuickClip</span></a
+                                >
+                            </p>
+                        </article>
+
                         <article class="project">
                             <h4>QuickMusic</h4>
                             <p class="meta">GNOME 50</p>
                             <p>
-                                What is playing, in Quick Settings and the top bar.
-                                Play, pause and skip in Spotify or any other MPRIS
-                                player without leaving the panel.
+                                What is playing, in Quick Settings and the top bar, with
+                                play/pause, previous and next for any MPRIS player. It
+                                follows whichever player started most recently, or stays
+                                on one you pin.
                             </p>
                             <p class="links">
-                                <a href="https://ghost-assembly.github.io/quickmusic/"
+                                <a href="https://ghost-assembly.com/quickmusic/"
                                     >Docs<span class="vh"> for QuickMusic</span></a
                                 >
                                 <a href="https://github.com/Ghost-Assembly/quickmusic"
@@ -111,12 +130,12 @@
                             <h4>QuickRem</h4>
                             <p class="meta">GNOME 49–50</p>
                             <p>
-                                Your saved Remmina connections in the Quick Settings
-                                panel. The list follows Remmina’s profile folder as it
-                                changes, so a new connection appears without a reload.
+                                Your saved Remmina connections in Quick Settings,
+                                following the profile folder as it changes. It never
+                                reads Remmina’s stored passwords.
                             </p>
                             <p class="links">
-                                <a href="https://ghost-assembly.github.io/quickrem/"
+                                <a href="https://ghost-assembly.com/quickrem/"
                                     >Docs<span class="vh"> for QuickRem</span></a
                                 >
                                 <a href="https://github.com/Ghost-Assembly/quickrem"
@@ -129,12 +148,13 @@
                             <h4>QuickTiler</h4>
                             <p class="meta">GNOME 49–50</p>
                             <p>
-                                Keyboard-driven zone tiling. Press a direction again to
-                                cycle the window through quarter, half and center zones,
-                                with no overlay and no timers.
+                                Keyboard-driven zone tiling with a Quick Settings tile,
+                                no overlay and no timers. Press a direction again and
+                                the focused window cycles through the zones on that
+                                side.
                             </p>
                             <p class="links">
-                                <a href="https://ghost-assembly.github.io/quicktiler/"
+                                <a href="https://ghost-assembly.com/quicktiler/"
                                     >Docs<span class="vh"> for QuickTiler</span></a
                                 >
                                 <a href="https://github.com/Ghost-Assembly/quicktiler"
@@ -147,12 +167,14 @@
                             <h4>QuickTS</h4>
                             <p class="meta">GNOME 50</p>
                             <p>
-                                Tailscale in Quick Settings. Toggle the tailnet, pick an
-                                exit node, switch profiles and send files over Taildrop
-                                without leaving the panel.
+                                Tailscale in Quick Settings: toggle the tailnet, pick an
+                                exit node, switch profiles, ping nodes and send or
+                                receive Taildrop files. If tailscaled refuses its
+                                socket, the menu says so instead of showing a tailnet
+                                that looks silently disconnected.
                             </p>
                             <p class="links">
-                                <a href="https://ghost-assembly.github.io/quickts/"
+                                <a href="https://ghost-assembly.com/quickts/"
                                     >Docs<span class="vh"> for QuickTS</span></a
                                 >
                                 <a href="https://github.com/Ghost-Assembly/quickts"
@@ -173,13 +195,36 @@
                             <h4>awsdiag</h4>
                             <p class="meta">Rust</p>
                             <p>
-                                Fast, compact AWS diagnostic data collection. Built to
-                                be driven by an AI agent during troubleshooting, and
-                                just as usable by hand.
+                                Fast, compact AWS diagnostic data collection, built to
+                                be driven by an AI agent and rendered into a single
+                                self-contained HTML report. It is just as usable by
+                                hand.
                             </p>
                             <p class="links">
                                 <a href="https://github.com/Ghost-Assembly/awsdiag"
                                     >Source<span class="vh"> for awsdiag</span></a
+                                >
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="group" aria-labelledby="selfhosted-title">
+                    <h3 id="selfhosted-title">Self-hosted services</h3>
+                    <p class="group-intro">Software you run on your own hardware.</p>
+                    <div class="list">
+                        <article class="project">
+                            <h4>GhostDock</h4>
+                            <p class="meta">Rust · Docker Compose</p>
+                            <p>
+                                A self-hosted, mobile-first manager for Docker Compose
+                                stacks, with Git-backed deploys and update checks. It
+                                follows Docker’s own events, so the board updates live
+                                as containers start, stop or turn unhealthy.
+                            </p>
+                            <p class="links">
+                                <a href="https://github.com/Ghost-Assembly/ghostdock"
+                                    >Source<span class="vh"> for GhostDock</span></a
                                 >
                             </p>
                         </article>

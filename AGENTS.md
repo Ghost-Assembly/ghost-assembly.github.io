@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Guidance for coding agents working on the Ghost Assembly organization site,
-<https://ghost-assembly.github.io/>. Read `README.md` for the human overview; this file
+<https://ghost-assembly.com/>. Read `README.md` for the human overview; this file
 holds the rules that are not obvious from the code.
 
 ## What gets published
@@ -11,9 +11,21 @@ holds the rules that are not obvious from the code.
 - **Everything in `docs/` is public, and nothing outside it is.** Keep tooling, tests,
   the design notes and the source logo out of `docs/`.
 - `docs/.nojekyll` disables Jekyll. Do not remove it.
-- The project docs at `/quickmusic/`, `/quickrem/`, `/quicktiler/` and `/quickts/` are
-  published from those projects' own repositories. Never create `docs/quickrem/` (or any
-  other project name) here — it would collide with them.
+- The project docs at `/quickclip/`, `/quickmusic/`, `/quickrem/`, `/quicktiler/` and
+  `/quickts/` are published from those projects' own repositories. Never create
+  `docs/quickrem/` (or any other project name) here — it would collide with them.
+  GhostDock has no docs site, so it has no slug here; its card is Source only.
+
+## Domain
+
+- The site is served at `https://ghost-assembly.com/`, set by `docs/CNAME`. Do not
+  remove or edit that file as routine work.
+- Each project's docs site inherits the same domain, `https://ghost-assembly.com/<slug>/`,
+  from that project's own repository and `CNAME` — not from anything in this repo.
+- HTTPS enforcement (`https_enforced`) is a GitHub Pages account/repository setting, not
+  something this repo configures or assumes.
+- Never hardcode `ghost-assembly.github.io` in new content. The old host still resolves
+  and redirects, but new links and metadata point at `ghost-assembly.com`.
 
 ## Hard constraints
 
@@ -65,9 +77,9 @@ WebKit is not supported on the maintainer's Fedora base, so do not add it.
 
 A project appears in three places, and all three must change together:
 
-1. `docs/index.html` — an `<article class="project">` in the right group. Link Docs to
-   `https://ghost-assembly.github.io/<slug>/` only if that project publishes a docs
-   site; otherwise give it Source only.
+1. `docs/index.html` — an `<article class="project">` in the right group. Docs link
+   only where a docs site exists, at `https://ghost-assembly.com/<slug>/`; otherwise
+   Source only.
 2. `tests/site.spec.js` — the `projects` list at the top, so its links are checked.
 3. The org profile README, `profile/README.md` in the separate
    [Ghost-Assembly/.github](https://github.com/Ghost-Assembly/.github) repository.
@@ -87,5 +99,7 @@ recipe are the measured bounds of the emblem and the whole logo in the 1254px so
 - Branch from `main`, open a pull request, and squash-merge once the `ci` job (which
   runs `just ci`) passes.
 - Conventional Commits, imperative subject, no trailing period.
+- American English spelling throughout (color, behavior, license, organization,
+  standardize). Keep third-party identifiers and quoted messages as they are.
 - Third-party GitHub Actions are pinned by commit SHA with the version in a comment.
 - `design/` holds the agreed design notes. Update them when the design changes.

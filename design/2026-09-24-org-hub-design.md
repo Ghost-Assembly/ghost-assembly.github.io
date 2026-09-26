@@ -130,3 +130,16 @@ Pattern sources to copy/adapt: `quickrem/justfile`, `quickrem/mise.toml`,
   shared with the user.
 - After Pages is enabled: `xh -h https://ghost-assembly.github.io/` returns 200, and the
   existing `/quickrem/`, `/quicktiler/`, `/quickts/` docs still resolve.
+
+## Amendment — 2026-09-26: custom domain and GhostDock
+
+- The org bought `ghost-assembly.com`. `docs/CNAME` now points GitHub Pages at it, and
+  every absolute URL on the page (og:url, og:image, project Docs links) points at the
+  new domain instead of `ghost-assembly.github.io`. Each project's own docs site
+  inherits the domain the same way, from its own repository.
+- The project list grew to seven: QuickClip, QuickMusic, QuickRem, QuickTiler and
+  QuickTS (GNOME Shell extensions), awsdiag (command-line), and GhostDock, a new
+  self-hosted Docker Compose manager, in a third group, "Self-hosted services", placed
+  after "Command-line tools". GhostDock publishes no docs site, so its card is Source
+  only, like awsdiag.
+- Footer text and copyright year are unchanged.
