@@ -10,6 +10,7 @@ const projects = [
     { name: 'QuickClip', slug: 'quickclip', docs: true },
     { name: 'QuickMusic', slug: 'quickmusic', docs: true },
     { name: 'QuickRem', slug: 'quickrem', docs: true },
+    { name: 'QuickSpot', slug: 'quickspot', docs: true },
     { name: 'QuickTiler', slug: 'quicktiler', docs: true },
     { name: 'QuickTS', slug: 'quickts', docs: true },
     { name: 'awsdiag', slug: 'awsdiag', docs: false },
