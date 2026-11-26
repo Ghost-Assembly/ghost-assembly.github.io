@@ -1,6 +1,6 @@
 # Toolchain versions only. Commands live in the justfile.
 [tools]
-node = "24.21.0"
+node = "26.13.1"
 just = "latest"
 
 # Security and lint tooling, pinned here so `just ci` behaves the same on a
